@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %} 
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<dev class="container">
+    <div class="row">
+        <center>
+            <div class="col-8">
+                
+                <br/><br/>
+                <div class="wrapper">
+                    <div class="logo">
+                        <img src=" {% static 'assets/favicon.ico' %}" alt="">
+                    </div>
+                    <div class="text-center mt-4 name">
+                        Login
+                    </div>
+                    <form class="p-3 mt-3"  method="POST" action="{% url 'login' %}">
+                        {% csrf_token %}
+                        <div class="form-field d-flex align-items-center">
+                            <span class="far fa-user"></span>
+                            <input type="text" name="username"  placeholder="Username">
+                        </div>
+                        <div class="form-field d-flex align-items-center">
+                            <span class="fas fa-key"></span>
+                            <input type="password" name="password"  placeholder="Password">
+                        </div>
+                        <button class="btn mt-3"  type="submit">Login</button>
+
+                    </form>
+                    <div class="text-center fs-6">
+                        <a href="#">Forget password?</a> or <a href="#">Sign up</a>
+                    </div>
+                </div>
+               <br/><br/>
+
+               <br/><br/>
+               <br/><br/>
+               <br/><br/>
+               <br/><br/>               
+            </div>
+        </center>
+    </div>
+</dev>
+
+
+{% endblock %}
